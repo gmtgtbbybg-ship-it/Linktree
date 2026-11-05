@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="6" fill="#c9a227"/>
+  <!-- Paper plane carrying a warning mark -->
+  <path d="M10 31 L54 13 L44 52 L31 39 Z" fill="#0b1118"/>
+  <path d="M31 39 L54 13 L27 35 Z" fill="#2a3644"/>
+  <path d="M38 24 V31" stroke="#c9a227" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="37" cy="36.5" r="2" fill="#c9a227"/>
+</svg>

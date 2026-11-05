@@ -111,20 +111,7 @@
 	transform: translateY(-50%);
 	width: 3.25rem;
 	height: 3.25rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	border-radius: 0.2rem;
-	background-color: #000000;
-	color: #ffffff;
-	font-size: 0.95rem;
-	font-weight: 800;
-	letter-spacing: -0.02em;
-}
-.broker-badge--alert {
-	background-color: var(--dp-accent);
-	color: #0b1118;
-	font-size: 1.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
