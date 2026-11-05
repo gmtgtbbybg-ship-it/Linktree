@@ -7,14 +7,14 @@
   - theme-dark: Forces dark theme
 -->
 
-<html class="theme-auto" lang="en"> <!-- Update `class="theme-auto"` with your preference -->
+<html class="theme-dark" lang="id"> <!-- Update `class="theme-auto"` with your preference -->
 
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Page Title - Change this to your name/brand (50-60 characters recommended) -->
-    <title>LittleLink</title>
+    <title>DiskusiPips</title>
     <link rel="icon" type="image/png" href="images/avatar.png"> <!-- Update this with your own favicon -->
 
     <!-- Meta Description - Write a description (150-160 characters recommended) -->
@@ -24,18 +24,17 @@
     <link rel="canonical" href="https://yourwebsite.com">
 
     <!-- Author Information -->
-    <meta name="author" content="Your Name">
+    <meta name="author" content="DiskusiPips">
 
     <!-- Browser UI Color - Matches the default light/dark theme backgrounds -->
-    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#070b10">
 
     <!-- Social Sharing (Open Graph & Twitter) - Uncomment and fill in to control how your page
          looks when shared on social platforms and in chat apps.
          og:url and og:image must be full absolute URLs. -->
     <!--
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Your Name">
+    <meta property="og:title" content="DiskusiPips">
     <meta property="og:description" content="A short description of your page.">
     <meta property="og:url" content="https://yourwebsite.com">
     <meta property="og:image" content="https://yourwebsite.com/images/avatar@2x.png">
@@ -55,6 +54,9 @@
     <!-- Optional extras inspired by johnggli/linktree. Remove a line (and its markup below) to turn one off -->
     <link rel="stylesheet" href="css/starfield.css">
     <link rel="stylesheet" href="css/avatar-popup.css">
+
+    <!-- DiskusiPips colors. Load last so it overrides the defaults -->
+    <link rel="stylesheet" href="css/theme-diskusipips.css">
 
     <!-- LittleLink Extended Stylesheet (Optional) -->
     <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
@@ -86,21 +88,21 @@
             -->
             <!-- The link opens the optional avatar popup (css/avatar-popup.css) -->
             <a class="avatar-link" href="#avatar-popup" aria-label="Open larger profile photo">
-              <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="LittleLink" width="128" height="128" fetchpriority="high">
+              <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="DiskusiPips" width="128" height="128" fetchpriority="high">
             </a>
 
             <!-- Optional avatar popup. Replace the image, alt text and quote with your own -->
             <div class="avatar-popup" id="avatar-popup" role="dialog" aria-label="Profile photo">
               <a class="avatar-popup__backdrop" href="#" tabindex="-1" aria-hidden="true"></a>
               <figure class="avatar-popup__card">
-                <img src="images/avatar@2x.png" alt="LittleLink" width="256" height="256" loading="lazy">
+                <img src="images/avatar@2x.png" alt="DiskusiPips" width="256" height="256" loading="lazy">
                 <figcaption>Replace this with a short quote or a line about yourself.</figcaption>
                 <a class="avatar-popup__close" href="#" aria-label="Close profile photo">&times;</a>
               </figure>
             </div>
 
             <!-- Replace with your name or brand -->
-            <h1>LittleLink</h1>
+            <h1>DiskusiPips</h1>
 
             <!-- Add a short description about yourself or your brand -->
             <p>An open source DIY Linktree alternative.</p>

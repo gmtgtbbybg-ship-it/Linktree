@@ -1,0 +1,56 @@
+/* DiskusiPips Theme
+  ––––––––––––––––––––––––––––––––––––––––––––––––––
+  A dark navy and steel palette with a gold accent. Load it after the other
+  stylesheets and use class="theme-dark" on <html>. Change the colors here. */
+
+:root {
+	--dp-bg-top: #1b2a3a;      /* steel navy */
+	--dp-bg-bottom: #070b10;   /* near black */
+	--dp-text: #e8edf2;
+	--dp-muted: #a9b6c3;
+	--dp-accent: #c9a227;      /* gold */
+	--dp-accent-hover: #e0bb45;
+	--dp-card: #142130;
+}
+
+:root.theme-dark body {
+	background-color: var(--dp-bg-bottom);
+	background-image: radial-gradient(ellipse at top, var(--dp-bg-top) 0%, var(--dp-bg-bottom) 75%);
+	background-attachment: fixed;
+	color: var(--dp-text);
+}
+
+:root.theme-dark .container p {
+	color: var(--dp-muted);
+}
+
+:root.theme-dark a:not(.button) {
+	color: var(--dp-accent);
+}
+:root.theme-dark a:not(.button):hover {
+	color: var(--dp-accent-hover);
+}
+:root.theme-dark :focus-visible {
+	outline-color: var(--dp-accent);
+}
+
+/* Gold ring around the avatar */
+:root.theme-dark .avatar {
+	box-shadow: 0 0 0 3px var(--dp-bg-bottom), 0 0 0 5px var(--dp-accent);
+}
+
+/* Default button in the brand colors */
+.button.button-default {
+	--button-text: #0b1118;
+	--button-background: var(--dp-accent);
+	--button-border: 1px solid var(--dp-accent);
+}
+
+/* Popup and stars in the brand colors */
+:root.theme-dark {
+	--star-color: rgba(214, 226, 238, 0.8);
+	--popup-background: var(--dp-card);
+	--popup-text: var(--dp-text);
+	--popup-close-background: var(--dp-accent);
+	--popup-close-text: #0b1118;
+}
