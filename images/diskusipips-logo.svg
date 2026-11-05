@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="DiskusiPips">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#26313d"/>
+      <stop offset="1" stop-color="#0d1218"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1d27a"/>
+      <stop offset="1" stop-color="#b8871f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="128" fill="url(#bg)"/>
+  <!-- Open book -->
+  <g fill="none" stroke="url(#gold)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M128 92 C110 78 86 74 62 80 V170 C86 164 110 168 128 182 C146 168 170 164 194 170 V80 C170 74 146 78 128 92 Z"/>
+    <path d="M128 92 V182"/>
+  </g>
+  <!-- Rising chart line on the right page -->
+  <path d="M142 150 L156 132 L168 140 L182 112" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M170 110 H183 V123" fill="none" stroke="url(#gold)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Text lines on the left page -->
+  <g stroke="url(#gold)" stroke-width="6" stroke-linecap="round" opacity="0.85">
+    <path d="M78 108 C92 105 104 106 114 111"/>
+    <path d="M78 128 C92 125 104 126 114 131"/>
+    <path d="M78 148 C92 145 104 146 114 151"/>
+  </g>
+</svg>

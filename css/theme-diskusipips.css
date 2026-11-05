@@ -11,6 +11,7 @@
 	--dp-accent: #c9a227;      /* gold */
 	--dp-accent-hover: #e0bb45;
 	--dp-card: #142130;
+	--dp-shadow: #6b5615;    /* dark gold, for the button offset shadow */
 }
 
 :root.theme-dark body {
@@ -53,4 +54,81 @@
 	--popup-text: var(--dp-text);
 	--popup-close-background: var(--dp-accent);
 	--popup-close-text: #0b1118;
+}
+
+/* Page layout like the reference: centered name, short welcome line */
+.container h1 {
+	font-size: var(--scale-4);
+	margin-bottom: var(--spacing-xs);
+}
+.container p.bio {
+	max-width: 26rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: var(--spacing-l);
+	line-height: 1.5;
+}
+.button-stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Broker buttons: wide, logo badge on the left, bold offset shadow */
+.button.button-broker {
+	position: relative;
+	width: 100%;
+	max-width: 30rem;
+	min-height: 4.25rem;
+	margin: 0 0.4rem 0 0;
+	padding: 0.5rem 1rem 0.5rem 4.5rem;
+	border-radius: 0.25rem;
+	background-color: var(--dp-card);
+	color: var(--dp-text);
+	border: 2px solid var(--dp-accent);
+	box-shadow: 6px 6px 0 var(--dp-shadow);
+	font-size: 1rem;
+	font-weight: 600;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+@media (hover: hover) {
+	.button.button-broker:hover {
+		background-color: #1d2e42;
+		transform: translate(-2px, -2px);
+		box-shadow: 8px 8px 0 var(--dp-shadow);
+	}
+}
+.button.button-broker:active {
+	transform: translate(4px, 4px);
+	box-shadow: 2px 2px 0 var(--dp-shadow);
+}
+
+.broker-badge {
+	position: absolute;
+	left: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 3.25rem;
+	height: 3.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.2rem;
+	background-color: #000000;
+	color: #ffffff;
+	font-size: 0.95rem;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+}
+.broker-badge--alert {
+	background-color: var(--dp-accent);
+	color: #0b1118;
+	font-size: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button.button-broker {
+		transition: none;
+	}
 }
