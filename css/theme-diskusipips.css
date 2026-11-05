@@ -1,0 +1,131 @@
+/* DiskusiPips Theme
+  ––––––––––––––––––––––––––––––––––––––––––––––––––
+  A dark navy and steel palette with a gold accent. Load it after the other
+  stylesheets and use class="theme-dark" on <html>. Change the colors here. */
+
+:root {
+	--dp-bg-top: #1b2a3a;      /* steel navy */
+	--dp-bg-bottom: #070b10;   /* near black */
+	--dp-text: #e8edf2;
+	--dp-muted: #a9b6c3;
+	--dp-accent: #c9a227;      /* gold */
+	--dp-accent-hover: #e0bb45;
+	--dp-card: #142130;
+	--dp-shadow: #6b5615;    /* dark gold, for the button offset shadow */
+}
+
+:root.theme-dark body {
+	background-color: var(--dp-bg-bottom);
+	background-image: radial-gradient(ellipse at top, var(--dp-bg-top) 0%, var(--dp-bg-bottom) 75%);
+	background-attachment: fixed;
+	color: var(--dp-text);
+}
+
+:root.theme-dark .container p {
+	color: var(--dp-muted);
+}
+
+:root.theme-dark a:not(.button) {
+	color: var(--dp-accent);
+}
+:root.theme-dark a:not(.button):hover {
+	color: var(--dp-accent-hover);
+}
+:root.theme-dark :focus-visible {
+	outline-color: var(--dp-accent);
+}
+
+/* Gold ring around the avatar */
+:root.theme-dark .avatar {
+	box-shadow: 0 0 0 3px var(--dp-bg-bottom), 0 0 0 5px var(--dp-accent);
+}
+
+/* Default button in the brand colors */
+.button.button-default {
+	--button-text: #0b1118;
+	--button-background: var(--dp-accent);
+	--button-border: 1px solid var(--dp-accent);
+}
+
+/* Popup and stars in the brand colors */
+:root.theme-dark {
+	--star-color: rgba(214, 226, 238, 0.8);
+	--popup-background: var(--dp-card);
+	--popup-text: var(--dp-text);
+	--popup-close-background: var(--dp-accent);
+	--popup-close-text: #0b1118;
+}
+
+/* Page layout like the reference: centered name, short welcome line */
+.container h1 {
+	font-size: var(--scale-4);
+	margin-bottom: var(--spacing-xs);
+}
+.container p.bio {
+	max-width: 26rem;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: var(--spacing-l);
+	line-height: 1.5;
+}
+.button-stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+/* Broker buttons: wide, logo badge on the left, bold offset shadow */
+.button.button-broker {
+	position: relative;
+	width: 100%;
+	max-width: 30rem;
+	min-height: 4.25rem;
+	margin: 0 0.4rem 0 0;
+	padding: 0.5rem 1rem 0.5rem 4.5rem;
+	border-radius: 0.25rem;
+	background-color: var(--dp-card);
+	color: var(--dp-text);
+	border: 2px solid var(--dp-accent);
+	box-shadow: 6px 6px 0 var(--dp-shadow);
+	font-size: 1rem;
+	font-weight: 600;
+	transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+@media (hover: hover) {
+	.button.button-broker:hover {
+		background-color: #1d2e42;
+		transform: translate(-2px, -2px);
+		box-shadow: 8px 8px 0 var(--dp-shadow);
+	}
+}
+.button.button-broker:active {
+	transform: translate(4px, 4px);
+	box-shadow: 2px 2px 0 var(--dp-shadow);
+}
+
+.broker-badge {
+	position: absolute;
+	left: 0.5rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 3.25rem;
+	height: 3.25rem;
+	border-radius: 0.2rem;
+}
+
+/* Small referral or partner code under the button text */
+.broker-code {
+	display: block;
+	margin-top: 0.2rem;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: var(--dp-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.button.button-broker {
+		transition: none;
+	}
+}
