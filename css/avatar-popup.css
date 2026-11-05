@@ -1,0 +1,133 @@
+/* Avatar Popup
+  ––––––––––––––––––––––––––––––––––––––––––––––––––
+  An optional, CSS-only popup that shows a larger profile photo and a short
+  quote when the avatar is clicked. Inspired by
+  https://github.com/johnggli/linktree (MIT).
+
+  It opens with the URL fragment (#avatar-popup) via :target, so it needs no
+  JavaScript. To remove it, delete this stylesheet's <link>, unwrap the avatar
+  from its <a class="avatar-link">, and delete the <div id="avatar-popup">. */
+
+:root {
+	--popup-backdrop: rgba(0, 0, 0, 0.6);
+	--popup-background: #ffffff;
+	--popup-text: #000000;
+	--popup-close-background: #000000;
+	--popup-close-text: #ffffff;
+}
+:root.theme-dark {
+	--popup-backdrop: rgba(0, 0, 0, 0.75);
+	--popup-background: #1e1e1e;
+	--popup-text: #ffffff;
+	--popup-close-background: #ffffff;
+	--popup-close-text: #000000;
+}
+@media (prefers-color-scheme:dark) {
+	:root.theme-auto {
+		--popup-backdrop: rgba(0, 0, 0, 0.75);
+		--popup-background: #1e1e1e;
+		--popup-text: #ffffff;
+		--popup-close-background: #ffffff;
+		--popup-close-text: #000000;
+	}
+}
+
+.avatar-link {
+	display: block;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	cursor: zoom-in;
+}
+.avatar-link .avatar {
+	transition: transform 0.2s ease-in-out;
+}
+@media (hover: hover) {
+	.avatar-link:hover .avatar {
+		transform: scale(1.05);
+	}
+}
+
+.avatar-popup {
+	position: fixed;
+	inset: 0;
+	z-index: 10;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--spacing-m);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.avatar-popup:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* Clicking anywhere outside the card closes the popup */
+.avatar-popup__backdrop {
+	position: absolute;
+	inset: 0;
+	background-color: var(--popup-backdrop);
+	cursor: zoom-out;
+}
+
+.avatar-popup__card {
+	position: relative;
+	width: 100%;
+	max-width: 22rem;
+	margin: 0;
+	background-color: var(--popup-background);
+	color: var(--popup-text);
+	border-radius: 1rem;
+	box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.35);
+	transform: scale(0.85);
+	transition: transform 0.3s ease-in-out;
+}
+.avatar-popup:target .avatar-popup__card {
+	transform: scale(1);
+}
+
+.avatar-popup__card img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: 1rem 1rem 0 0;
+}
+
+.avatar-popup__card figcaption {
+	padding: var(--spacing-m);
+	font-size: var(--scale-0);
+	font-style: italic;
+	line-height: 1.5;
+	text-align: center;
+}
+
+.avatar-popup__close {
+	position: absolute;
+	top: -0.75rem;
+	right: -0.75rem;
+	width: 2.75rem;
+	height: 2.75rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: var(--popup-close-background);
+	color: var(--popup-close-text) !important;
+	font-size: 1.75rem;
+	line-height: 1;
+	text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.avatar-link .avatar,
+	.avatar-popup,
+	.avatar-popup__card {
+		transition: none;
+	}
+}

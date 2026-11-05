@@ -52,6 +52,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/brands.css">
 
+    <!-- Optional extras inspired by johnggli/linktree. Remove a line (and its markup below) to turn one off -->
+    <link rel="stylesheet" href="css/starfield.css">
+    <link rel="stylesheet" href="css/avatar-popup.css">
+
     <!-- LittleLink Extended Stylesheet (Optional) -->
     <!-- <link rel="stylesheet" href="css/brands-extended.css"> -->
     <!-- Learn more at https://github.com/sethcottle/littlelink-extended.
@@ -60,6 +64,13 @@
   </head>
 
 <body>
+
+    <!-- Optional starfield background (css/starfield.css) -->
+    <div class="starfield" aria-hidden="true">
+      <div class="stars stars--small"></div>
+      <div class="stars stars--medium"></div>
+      <div class="stars stars--large"></div>
+    </div>
 
     <div class="container">
         <div class="column">
@@ -73,7 +84,20 @@
 
               Be sure to replace the src with your own image path and update the alt text
             -->
-            <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="LittleLink" width="128" height="128" fetchpriority="high">
+            <!-- The link opens the optional avatar popup (css/avatar-popup.css) -->
+            <a class="avatar-link" href="#avatar-popup" aria-label="Open larger profile photo">
+              <img class="avatar avatar--rounded" src="images/avatar.png" srcset="images/avatar@2x.png 2x" alt="LittleLink" width="128" height="128" fetchpriority="high">
+            </a>
+
+            <!-- Optional avatar popup. Replace the image, alt text and quote with your own -->
+            <div class="avatar-popup" id="avatar-popup" role="dialog" aria-label="Profile photo">
+              <a class="avatar-popup__backdrop" href="#" tabindex="-1" aria-hidden="true"></a>
+              <figure class="avatar-popup__card">
+                <img src="images/avatar@2x.png" alt="LittleLink" width="256" height="256" loading="lazy">
+                <figcaption>Replace this with a short quote or a line about yourself.</figcaption>
+                <a class="avatar-popup__close" href="#" aria-label="Close profile photo">&times;</a>
+              </figure>
+            </div>
 
             <!-- Replace with your name or brand -->
             <h1>LittleLink</h1>
