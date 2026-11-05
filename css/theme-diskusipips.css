@@ -114,6 +114,16 @@
 	border-radius: 0.2rem;
 }
 
+/* Small referral or partner code under the button text */
+.broker-code {
+	display: block;
+	margin-top: 0.2rem;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: var(--dp-accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
 	.button.button-broker {
 		transition: none;
